@@ -69,6 +69,7 @@ export const PositionSearch = styled.div`
     border: none;
     outline: none;
     font-size: 24pt;
+    cursor: pointer;
     padding: 10px 100px 10px 100px;
   }
 `

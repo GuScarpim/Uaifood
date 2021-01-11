@@ -1,7 +1,7 @@
 {
   "paths": {
-    "login": "/",
-    "home": "/home"
+    "root": "/",
+    "restaurants": "/restaurantes"
   },
   "api": {
     "categories": "https://developers.zomato.com/api/v2.1/categories",

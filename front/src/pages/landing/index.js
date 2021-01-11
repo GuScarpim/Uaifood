@@ -10,7 +10,7 @@ import Globals from '../../Globals.json';
 import Background from '../../assets/uaifood/bg.jpg';
 import Logo from '../../assets/uaifood/logo-white.jpg';
 
-export default function ScrollAnimated() {
+export default function Landing() {
   const [search, setSearch] = useState([])
   const [titleState, setTitleState] = useState('')
   const [cityName, setCityName] = useState('')
@@ -50,7 +50,7 @@ export default function ScrollAnimated() {
           <FontAwesomeIcon className="faMapMarkerAlt" icon={faMapMarkerAlt} />
 
           {searchValue.length > 3 &&
-            <S.ResultSearch>
+            <S.ResultSearch >
               <label>{titleState}</label>
               <span>Estado de {cityName}</span>
             </S.ResultSearch>

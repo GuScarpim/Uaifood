@@ -4,12 +4,12 @@ import reportWebVitals from './reportWebVitals';
 
 import GlobalStyle from './GlobalStyle';
 
-import Landing from './pages/landing';
+import Routes from './routes/routes';
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <Landing />
+    <Routes />
   </React.StrictMode>,
   document.getElementById('root')
 );
