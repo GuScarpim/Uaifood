@@ -6,6 +6,7 @@
   "api": {
     "categories": "https://developers.zomato.com/api/v2.1/categories",
     "search": "https://developers.zomato.com/api/v2.1/search",
-    "locations": "https://developers.zomato.com/api/v2.1/locations"
+    "locations": "https://developers.zomato.com/api/v2.1/locations",
+    "collections": "https://developers.zomato.com/api/v2.1/collections"
   }
 }

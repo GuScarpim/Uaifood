@@ -23,7 +23,6 @@ export const Container = styled.div`
 `
 
 export const Note = styled.div`
-  height: 80vh;
   padding: 20px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 
@@ -38,6 +37,7 @@ export const Note = styled.div`
     color: #A5A5A5;
     font-size: 18pt;
     margin-bottom: 20px;
+    text-transform: uppercase;
   }
 
   .faStar {
@@ -46,22 +46,52 @@ export const Note = styled.div`
   }
 `
 
-export const ContentsNote =styled.div`
+export const ContentsNote = styled.div`
   display: flex;
+  align-items: center;
+  font-family: "open sans";
+  color: #484848;
+  font-size: 18pt;
 
   input[type="checkbox"] {
     width: 20px;
     height: 20px;
     border: 1px solid #ccc;
     outline: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  svg {
+    margin: 0 0 15px 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  span {
+    margin: 0 0 20px 10px;
   }
 `
 
 export const Contents = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 15px 40px;
 
-  .contents { 
-    grid-area: contents; 
+  .contents {
+    grid-area: contents;
   }
+
+  .title_restaurant {
+    font-size: 18pt;
+    font-family: 'open sans';
+    font-weight: 400;
+    color: #2e2e2e;
+  }
+`
+export const FlexCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 `
