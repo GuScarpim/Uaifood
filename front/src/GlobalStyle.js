@@ -1,9 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  input, button, textarea {
-    font-family: 'Zilla Slab';
-  }
+  
   ::-webkit-scrollbar {
     width: 8px;
     background-color: #2e2e2e;
@@ -33,12 +31,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0px;
     margin: 0px;
-    background: #24292E;
+    background: #FFF;
     overflow-y: auto;
     overflow-x: auto;
-    @media (max-width: 800px){
-      overflow-x: hidden;
-    }
   }
 `
 
