@@ -4,7 +4,7 @@ import * as S from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 
-export default function Card({ image_url, title, city }) {
+export default function Card({ image_url, title }) {
   const [stars] = useState([{ "stars": [0, 1, 2] }])
 
   return (
@@ -13,7 +13,7 @@ export default function Card({ image_url, title, city }) {
 
       <content>
         <label>{title}</label>
-        <span>São Paulo</span>
+        <span>{localStorage.getItem('searchValue')}</span>
 
         {stars.map((star, index) => (
           <div key={index}>

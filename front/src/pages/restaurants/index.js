@@ -13,32 +13,30 @@ import SearchInput from '../../components/search';
 import Globals from '../../Globals.json';
 
 export default function Restaurants() {
-  const [stars] = useState([
-    { "id": 1, "stars": [0] }, { "id": 2, "stars": [0, 1] },
-    { "id": 3, "stars": [0, 1, 2] }, { "id": 4, "stars": [0, 1, 2, 3] },
-    { "id": 5, "stars": [0, 1, 2, 3, 4] }
-  ])
-  const [cust] = useState([
-    { id: 1, text: "Até R$50" }, { id: 2, text: "De R$50 a R$80" },
-    { id: 3, text: "De R$180 a R$110" }, { id: 4, text: "Acima de R110" }
-  ])
+  const [stars] = useState([{ "id": 1, "stars": [0] }, { "id": 2, "stars": [0, 1] }, { "id": 3, "stars": [0, 1, 2] }, { "id": 4, "stars": [0, 1, 2, 3] }, { "id": 5, "stars": [0, 1, 2, 3, 4] }])
+  const [cust] = useState([{ id: 1, text: "Até R$50" }, { id: 2, text: "De R$50 a R$80" }, { id: 3, text: "De R$180 a R$110" }, { id: 4, text: "Acima de R110" }])
   const [typeMeet] = useState(["Árabe", "Brasileira", "Chinesa", "Francesa", "Frutos do mar", "Italiana", "Japonesa", "Mexicana", "Peruana"])
   const [restautants, setRestautants] = useState([])
 
   useEffect(() => {
-    api.get(Globals.api.collections + `?city_id=${30}&count=6`).then(response => {
+    getRestautants()
+  }, [])
+
+  const getRestautants = () => {
+    const countryId = localStorage.getItem('countryId');
+    api.get(Globals.api.collections + `?city_id=${countryId}&count=6`).then(response => {
       setRestautants(response.data.collections)
       console.log('Collections', restautants)
     }).catch(err => {
       console.log(err)
     })
-  }, [])
+  }
 
   return (
     <>
       <S.Header>
         <img src={Logo} alt="Uaifood" />
-        <SearchInput />
+        <SearchInput getRestaurants={() => getRestautants()} />
       </S.Header>
 
       <S.Container>
@@ -87,7 +85,7 @@ export default function Restaurants() {
             <S.FlexCard>
               {restautants.map((item, index) => (
                 <div key={index}>
-                  <Card image_url={item.collection.image_url} title={item.collection.title} city={item.collection.city} />
+                  <Card image_url={item.collection.image_url} title={item.collection.title} />
                 </div>
               ))}
             </S.FlexCard>

@@ -1,15 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import * as S from './styles';
 
 import Logo from '../../assets/uaifood/logo-white.jpg';
-
-import Context from '../../context/context';
 
 import Background from '../../assets/uaifood/bg.jpg';
 import SearchInput from '../../components/search';
 
 export default function Landing() {
-  const [context, setContext] = useState();
 
   return (
     <S.Container bg={Background}>

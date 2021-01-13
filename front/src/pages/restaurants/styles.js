@@ -26,23 +26,23 @@ export const Note = styled.div`
   padding: 20px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 
-  .note { 
+  .note {
     display: flex;
     flex-direction: column;
     height: 100%;
-    grid-area: note; 
+    grid-area: note;
   }
 
   label {
     color: #A5A5A5;
-    font-size: 18pt;
+    font-size: 18px;
     margin-bottom: 20px;
     text-transform: uppercase;
   }
 
   .faStar {
     color: #484848;
-    font-size: 18pt;
+    font-size: 18px;
   }
 `
 
@@ -51,7 +51,7 @@ export const ContentsNote = styled.div`
   align-items: center;
   font-family: "open sans";
   color: #484848;
-  font-size: 18pt;
+  font-size: 18px;
 
   input[type="checkbox"] {
     width: 20px;

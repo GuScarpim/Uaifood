@@ -8,8 +8,8 @@ import Routes from './routes/routes';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <Routes />
+      <GlobalStyle />
+      <Routes />
   </React.StrictMode>,
   document.getElementById('root')
 );
