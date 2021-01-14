@@ -23,37 +23,64 @@ export default function Restaurants() {
     getRestaurants()
   }, [])
 
-  const getRestaurants = (order, e) => {
+  const getRestaurants = (e) => {
     const city = localStorage.getItem('searchValue')
     if (e) {
       setOrderBy(e.target.value)
     }
     api.get(Globals.api.search + `?entity_type=city&q=${city}`).then(response => {
       console.log(orderBy)
+      console.log(restaurants)
         if (e) {
           if (e.target.value === "Até R$50") {
-            console.log('entrou no"Até R$50" ')
             var orderBy1 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two <= 50)
             return setRestaurants(orderBy1)
-            // console.log('saiu do "Até R$50"', orderBy1, restaurants)
           } else
           if (e.target.value === "De R$50 a R$80") {
-            console.log('entrou no "De R$50 a R$80"')
             var orderBy2 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two > 50 && item.restaurant.average_cost_for_two <= 80)
             return setRestaurants(orderBy2)
-            // console.log('saiu do "De R$50 a R$80"', orderBy2, restaurants)
           } else
           if (e.target.value === "De R$80 a R$110") {
-            console.log('entrou no "De R$80 a R$110"')
             var orderBy3 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two > 80 && item.restaurant.average_cost_for_two <= 110)
             return setRestaurants(orderBy3)
-            // console.log('saiu do "De R$80 a R$110"', orderBy3, restaurants)
           } else
           if (e.target.value === "Acima de R$110") {
-            console.log('entrou no "Acima de R$110"')
             var orderBy4 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two > 110)
             return setRestaurants(orderBy4)
-            // console.log('saiu do "Acima de R$110"', orderBy4, restaurants)
+          }
+        } else {
+          var orderBy1 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two <= 50)
+          return setRestaurants(orderBy1)
+        }
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  const getRestaurantsCuisines = (e) => {
+    const city = localStorage.getItem('searchValue')
+    if (e) {
+      setOrderBy(e.target.value)
+    }
+    api.get(Globals.api.search + `?entity_type=city&q=${city}`).then(response => {
+      console.log(orderBy)
+      console.log(restaurants)
+        if (e) {
+          if (e.target.value === "Até R$50") {
+            var orderBy1 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two <= 50)
+            return setRestaurants(orderBy1)
+          } else
+          if (e.target.value === "De R$50 a R$80") {
+            var orderBy2 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two > 50 && item.restaurant.average_cost_for_two <= 80)
+            return setRestaurants(orderBy2)
+          } else
+          if (e.target.value === "De R$80 a R$110") {
+            var orderBy3 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two > 80 && item.restaurant.average_cost_for_two <= 110)
+            return setRestaurants(orderBy3)
+          } else
+          if (e.target.value === "Acima de R$110") {
+            var orderBy4 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two > 110)
+            return setRestaurants(orderBy4)
           }
         } else {
           var orderBy1 = response.data.restaurants.filter(item => item.restaurant.average_cost_for_two <= 50)
@@ -92,7 +119,7 @@ export default function Restaurants() {
 
             {cust.map(item => (
               <S.ContentsNote key={item.id}>
-                <input type="checkbox" checked={orderBy === item.text ? true : false} onChange={(e) => getRestaurants(true, e)} value={item.text} />
+                <input type="checkbox" checked={orderBy === item.text ? true : false} onChange={(e) => getRestaurants(e)} value={item.text} />
                 <span>{item.text}</span>
               </S.ContentsNote>
             ))}
