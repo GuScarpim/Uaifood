@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import * as S from './styles';
+import React, { useState } from 'react'
+import * as S from './styles'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 
-export default function Card({ image_url, title }) {
+import image_preview from '../../assets/uaifood/zomato.png'
+
+export default function Card({ image_url, title, cost, cuisines, link }) {
   const [stars] = useState([{ "stars": [0, 1, 2] }])
 
   return (
     <S.Card>
-      <img src={image_url} alt={title} />
+      {image_url === '' ?
+        <img src={image_preview} alt={title} /> :
+        <img src={image_url} alt={title} />
+      }
 
       <content>
-        <label>{title}</label>
+        <label><a href={link} target="_blank">{title}</a></label>
         <span>{localStorage.getItem('searchValue')}</span>
 
         {stars.map((star, index) => (
@@ -27,9 +32,9 @@ export default function Card({ image_url, title }) {
         <S.PositionInfo>
           <div className="price" >
             <FontAwesomeIcon className="faUserFriends" icon={faUserFriends} />
-            <span>R$75</span>
+            <span>R$ {cost}</span>
           </div>
-          <div className="type_meet">Japonesa</div>
+          <div className="type_meet">{cuisines}</div>
         </S.PositionInfo>
     </S.Card>
   );

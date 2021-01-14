@@ -24,8 +24,16 @@ export default function Restaurants() {
 
   const getRestautants = () => {
     const countryId = localStorage.getItem('countryId');
-    api.get(Globals.api.collections + `?city_id=${countryId}&count=6`).then(response => {
-      setRestautants(response.data.collections)
+    const city = localStorage.getItem('searchValue')
+    // api.get(Globals.api.collections + `?city_id=${countryId}`).then(response => {
+    //   setRestautants(response.data.collections)
+    //   console.log('Collections', restautants)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
+    api.get(Globals.api.search + `?entity_type=city&q=${city}`).then(response => {
+      setRestautants(response.data.restaurants)
+      // setCost(response.data.restaurants.average_cost_for_two)
       console.log('Collections', restautants)
     }).catch(err => {
       console.log(err)
@@ -80,12 +88,13 @@ export default function Restaurants() {
 
         <S.Contents>
           <div className="Contents">
-            <label className="title_restaurant">Restaurantes em São Paulo</label>
+            <label className="title_restaurant">Restaurantes em {localStorage.getItem('searchValue')}</label>
 
             <S.FlexCard>
               {restautants.map((item, index) => (
                 <div key={index}>
-                  <Card image_url={item.collection.image_url} title={item.collection.title} />
+                  <Card image_url={item.restaurant.thumb} title={item.restaurant.name} link={item.restaurant.menu_url}
+                    cost={item.restaurant.average_cost_for_two} cuisines={item.restaurant.cuisines} />
                 </div>
               ))}
             </S.FlexCard>

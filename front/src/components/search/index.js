@@ -25,7 +25,7 @@ export default function Search(props) {
         .then((response) => {
           setTitleState(response.data.location_suggestions[0].title)
           setCityName(response.data.location_suggestions[0].city_name)
-          setCountryId(response.data.location_suggestions[0].country_id)
+          setCountryId(response.data.location_suggestions[0].city_id)
           console.log(response.data)
         }).catch((error) => {
           console.log(error)
