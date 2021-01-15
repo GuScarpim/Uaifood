@@ -34,7 +34,7 @@ export const PositionContents = styled.div`
 
   h1 {
     color: #FFF;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     font-size: 60pt;
     line-height: 10px;
   }

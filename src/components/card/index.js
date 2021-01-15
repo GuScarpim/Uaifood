@@ -23,7 +23,7 @@ export default function Card({ image_url, title, cost, cuisines, link }) {
         {stars.map((star, index) => (
           <div key={index}>
             {star.stars.map((item, index) => (
-              <FontAwesomeIcon className="faStar" key={index} icon={faStar} />
+              <FontAwesomeIcon className="faStar" color="#39b54a" key={index} icon={faStar} />
             ))}
           </div>
         ))}
@@ -31,10 +31,10 @@ export default function Card({ image_url, title, cost, cuisines, link }) {
 
         <S.PositionInfo>
           <div className="price" >
-            <FontAwesomeIcon className="faUserFriends" icon={faUserFriends} />
+            <FontAwesomeIcon icon={faUserFriends} />
             <span>R$ {cost}</span>
           </div>
-          <div className="type_meet">{cuisines}</div>
+          <div className="type_meet"><span>{cuisines}</span></div>
         </S.PositionInfo>
     </S.Card>
   );

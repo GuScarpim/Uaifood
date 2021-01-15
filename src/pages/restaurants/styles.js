@@ -178,9 +178,8 @@ export const Contents = styled.div`
   .title_restaurant {
     font-size: 18pt;
     font-family: 'open sans';
-    font-weight: 400;
+    font-weight: 600;
     color: #2e2e2e;
-
     @media (max-width: 600px) {
       font-size: 20px;
     }

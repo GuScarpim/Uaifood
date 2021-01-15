@@ -1,14 +1,32 @@
 import styled from "styled-components";
 
-// Open Sans Extra Bold
-// Open Sans Light
-// Open Sans Regular
-// Open Sans Semi Bold
-
 export const Card = styled.div`
   width: 450px;
   margin: 30px 0px 20px 20px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
+  @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+}
 
   content {
     display: flex;
@@ -24,12 +42,15 @@ export const Card = styled.div`
       text-overflow: ellipsis;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 1;
-      color: #2e2e2e;
+      color: #333;
     }
 
     a {
-      color: #2e2e2e;
+      font-family: 'open sans';
+      font-weight: 600;
+      color: #333;
       cursor: pointer;
+      text-decoration: none;
     }
 
     span {
@@ -105,11 +126,6 @@ export const Card = styled.div`
 `
 
 export const PositionInfo = styled.div`
-  @font-face {
-    font-family: 'Open Sans Semi Bold';
-    src: local('Open Sans Semi Bold'), url('./assets/fonts/OpenSans-SemiBold.ttf') format('ttf');
-  }
-
   display: flex;
   align-items: center;
   padding: 10px 10px 20px 10px;
@@ -129,7 +145,8 @@ export const PositionInfo = styled.div`
   }
 
   span {
-    font-family: 'Open Sans Semi Bold';
+    font-family: 'Open Sans';
+    font-weight: 600;
     margin-left: 10px;
     font-size: 16pt;
   }
@@ -137,15 +154,27 @@ export const PositionInfo = styled.div`
   .type_meet {
     display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     min-width: 140px;
+    width: 100%;
+    margin-right: 100px;
     height: 35px;
     background: #ccc;
     color: #000;
-    display: flex;
-    align-items: center;
     margin-left: 20px;
-    font-size: 14pt;
+
+    span {
+      text-align: center;
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 16px;
+      height: 20px;
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
   }
 
   @media (max-width: 1200px) {
