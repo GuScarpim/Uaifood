@@ -25,7 +25,7 @@
 # Desenvolvido por Gustavo Scarpim:
 
 
-## Desketop
+## Desktop
 ![Projeto em ação](./src/assets/uaifood/uaifood_desk.gif)
 
 ## Mobile
