@@ -23,3 +23,10 @@
 <b>4º Rode o comando "yarn start" ou "npm start".</b>
 
 # Desenvolvido por Gustavo Scarpim:
+
+
+## Desketop
+![Projeto em ação](./src/assets/uaifood/uaifood_desk.gif)
+
+## Mobile
+![Projeto em ação](./src/assets/uaifood/uaifood_mobile.gif)
