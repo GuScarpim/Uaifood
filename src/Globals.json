@@ -1,0 +1,14 @@
+{
+  "paths": {
+    "root": "/",
+    "restaurants": "/restaurantes"
+  },
+  "api": {
+    "categories": "https://developers.zomato.com/api/v2.1/categories",
+    "search": "https://developers.zomato.com/api/v2.1/search",
+    "locations": "https://developers.zomato.com/api/v2.1/locations",
+    "restaurant": "https://developers.zomato.com/api/v2.1/restaurant",
+    "cities": "https://developers.zomato.com/api/v2.1/cities",
+    "collections": "https://developers.zomato.com/api/v2.1/collections"
+  }
+}

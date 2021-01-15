@@ -1,7 +1,36 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  
+
+  @font-face {
+    font-family: 'Open Sans Extra Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open Sans Extra Bold'), url('./assets/fonts/OpenSans-ExtraBold.ttf') format('ttf');
+  }
+
+  @font-face {
+    font-family: 'Open Sans Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open Sans Light'), url('./assets/fonts/OpenSans-Light.ttf') format('ttf');
+  }
+
+  @font-face {
+    font-family: 'Open Sans Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open Sans Regular'), url('./assets/fonts/OpenSans-Regular.ttf') format('ttf');
+  }
+
+  @font-face {
+    font-family: 'Open Sans Semi Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open Sans Semi Bold'), url('./assets/fonts/OpenSans-SemiBold.ttf') format('ttf');
+  }
+
+
   ::-webkit-scrollbar {
     width: 8px;
     background-color: #2e2e2e;

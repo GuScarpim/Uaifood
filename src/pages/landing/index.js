@@ -21,10 +21,9 @@ export default function Landing() {
           </h1>
 
           <SearchInput />
-          
         </S.PositionContents>
 
       </S.Content>
     </S.Container >
   );
-} 
+}

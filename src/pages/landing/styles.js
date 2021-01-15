@@ -13,6 +13,10 @@ export const Logo = styled.div`
   justify-content: center;
   position: absolute;
   top: 100px;
+
+  @media (max-width: 500px) {
+    top: 20px;
+  }
 `
 
 export const Content = styled.div`
@@ -30,8 +34,30 @@ export const PositionContents = styled.div`
 
   h1 {
     color: #FFF;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     font-size: 60pt;
     line-height: 10px;
-  } 
+  }
+
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 60px;
+    }
+
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 40px;
+      }
+      @media (max-width: 700px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      @media (max-width: 500px) {
+        h1 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
 `
